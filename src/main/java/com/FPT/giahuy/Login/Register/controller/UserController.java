@@ -12,18 +12,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @Autowired
     private UserService userService;
+
     @PostMapping("/user")
-    public UserDTO createUser( @RequestBody UserDTO userDTO) {
-      UserDTO user=userService.createUser(userDTO);
-      return user;
+    public UserDTO createUser(@RequestBody UserDTO userDTO) {
+        UserDTO user = userService.createUser(userDTO);
+        return user;
     }
-   @PostMapping("/login")
-    public boolean login (@RequestBody MemberDTO memberDTO) {
+
+    @PostMapping("/login")
+    public boolean login(@RequestBody MemberDTO memberDTO) {
         boolean user = userService.login(memberDTO);
-                if(user==true){
-                    return true;
-                }
-                return false;
+        if (user == true) {
+            return true;
+        }
+        return false;
 
     }
 }

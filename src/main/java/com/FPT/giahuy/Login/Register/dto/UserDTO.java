@@ -1,6 +1,5 @@
 package com.FPT.giahuy.Login.Register.dto;
 
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

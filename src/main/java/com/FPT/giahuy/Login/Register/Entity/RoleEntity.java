@@ -18,10 +18,11 @@ public class RoleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int roleId;
-    @Column(name="RoleName")
+    @Column(name = "RoleName")
     private String roleName;
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
     private Set<UserEntity> userEntitySet;
+
     public RoleEntity(int roleId, String roleName) {
         this.roleId = roleId;
         this.roleName = roleName;

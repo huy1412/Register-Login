@@ -4,7 +4,7 @@ import com.FPT.giahuy.Login.Register.Entity.UserEntity;
 import com.FPT.giahuy.Login.Register.dto.UserDTO;
 
 public class UserMap {
-    public static UserDTO mapToDTO( UserEntity userEntity) {
+    public static UserDTO mapToDTO(UserEntity userEntity) {
         return new UserDTO(
                 userEntity.getId(),
                 userEntity.getUsername(),
@@ -12,7 +12,8 @@ public class UserMap {
                 RoleMap.mapToDTO(userEntity.getRole())
         );
     }
-    public static UserEntity mapToEntity( UserDTO userDTO) {
+
+    public static UserEntity mapToEntity(UserDTO userDTO) {
         return new UserEntity(
                 userDTO.getId(),
                 userDTO.getUsername(),
