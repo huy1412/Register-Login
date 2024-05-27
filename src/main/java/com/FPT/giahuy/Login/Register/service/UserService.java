@@ -18,10 +18,20 @@ public class UserService {
 
     public UserDTO createUser(UserDTO userDTO) {
         UserEntity userEntity = UserMap.mapToEntity(userDTO);
+
+@Service
+public class UserService {
+    @Autowired
+    private  UserRepository userRepository;
+
+    public UserDTO createUser(UserDTO userDTO) {
+        UserEntity userEntity= UserMap.mapToEntity(userDTO);
+
         UserEntity createdUser = userRepository.save(userEntity);
         return UserMap.mapToDTO(createdUser);
 
     }
+
 
     public boolean login(MemberDTO memberDTO) {
         List<UserEntity> users = userRepository.findAll();
@@ -37,4 +47,5 @@ public class UserService {
         }
         return false;
     }
+
 }

@@ -18,8 +18,8 @@ public class UserEntity {
     @Column(unique = true, nullable = false)
     private String username;
     @Column(unique = true, nullable = false)
+    private String username;
     private String password;
-
     @ManyToOne
     @JoinColumn(name = "roleId", nullable = false)
     private RoleEntity role;
