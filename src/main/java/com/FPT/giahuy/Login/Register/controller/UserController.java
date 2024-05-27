@@ -1,5 +1,6 @@
 package com.FPT.giahuy.Login.Register.controller;
 
+import com.FPT.giahuy.Login.Register.dto.MemberDTO;
 import com.FPT.giahuy.Login.Register.dto.UserDTO;
 import com.FPT.giahuy.Login.Register.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,5 +16,14 @@ public class UserController {
     public UserDTO createUser( @RequestBody UserDTO userDTO) {
       UserDTO user=userService.createUser(userDTO);
       return user;
+    }
+   @PostMapping("/login")
+    public boolean login (@RequestBody MemberDTO memberDTO) {
+        boolean user = userService.login(memberDTO);
+                if(user==true){
+                    return true;
+                }
+                return false;
+
     }
 }

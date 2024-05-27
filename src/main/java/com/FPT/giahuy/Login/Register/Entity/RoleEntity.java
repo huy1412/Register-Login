@@ -22,8 +22,6 @@ public class RoleEntity {
     private String roleName;
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
     private Set<UserEntity> userEntitySet;
-
-
     public RoleEntity(int roleId, String roleName) {
         this.roleId = roleId;
         this.roleName = roleName;
