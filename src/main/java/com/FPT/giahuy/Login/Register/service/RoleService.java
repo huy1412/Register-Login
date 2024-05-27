@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class RoleService {
     @Autowired
-    private  RoleRepository roleRepository;
+    private RoleRepository roleRepository;
 
     public RoleDTO create(RoleDTO roleDTO) {
         RoleEntity roleEntity = RoleMap.mapToEntity(roleDTO);
         RoleEntity rolesave = roleRepository.save(roleEntity);
-            return RoleMap.mapToDTO(rolesave);
+        return RoleMap.mapToDTO(rolesave);
     }
 
 }
