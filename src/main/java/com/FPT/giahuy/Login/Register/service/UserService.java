@@ -38,6 +38,7 @@ public class UserService {
         return false;
     }
 
+
     public UserDTO changePassword(Integer id, UserDTO userDTO) {
         UserEntity userEntity = userRepository.findById(id).get();
         userEntity.setPassword(userDTO.getPassword());
@@ -46,4 +47,5 @@ public class UserService {
 
         return UserMap.mapToDTO(changePassword);
     }
+
 }
