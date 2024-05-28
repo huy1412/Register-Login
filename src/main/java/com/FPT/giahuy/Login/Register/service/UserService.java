@@ -1,4 +1,5 @@
 package com.FPT.giahuy.Login.Register.service;
+
 import com.FPT.giahuy.Login.Register.Entity.UserEntity;
 import com.FPT.giahuy.Login.Register.dto.MemberDTO;
 import com.FPT.giahuy.Login.Register.dto.UserDTO;
@@ -35,6 +36,16 @@ public class UserService {
             }
         }
         return false;
+    }
+
+
+    public UserDTO changePassword(Integer id, UserDTO userDTO) {
+        UserEntity userEntity = userRepository.findById(id).get();
+        userEntity.setPassword(userDTO.getPassword());
+        UserEntity changePassword = userRepository.save(userEntity);
+
+
+        return UserMap.mapToDTO(changePassword);
     }
 
 }
