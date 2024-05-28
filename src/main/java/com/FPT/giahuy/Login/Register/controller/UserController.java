@@ -28,7 +28,7 @@ public class UserController {
 
     @PutMapping("/changepassword/{id}")
     public UserDTO updatePasswordUser(@PathVariable("id") int id, @RequestBody UserDTO userDTO) {
-        UserDTO user1 = userService.changePassword(id, userDTO);
-        return user1;
+        UserDTO user = userService.changePassword(id, userDTO);
+        return user;
     }
 }
